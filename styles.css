@@ -1,0 +1,87 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+}
+
+.header-game {
+  width: 50%;
+  margin: auto;
+  display: flex;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .5);
+}
+
+.memory-game {
+  width: 640px;
+  height: 640px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  perspective: 1000px;
+}
+
+/* CARTAS */
+.memory-card {
+  width: calc(25% - 10px);
+  height: calc(33.333% - 10px);
+  margin: 5px;
+  position: relative;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform .5s;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
+}
+
+.memory-card:active {
+  /* transform: scale(0.97); */
+  transition: transform .2s;
+  transform: rotateY(180deg);
+}
+
+.memory-card.flip {
+  transform: rotateY(180deg);
+}
+
+.front-face,
+.back-face {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  position: absolute;
+  border-radius: 5px;
+  background: #000000c7;
+  backface-visibility: hidden;
+}
+
+.front-face {
+  transform: rotateY(180deg);
+}
+
+/* BOTON COMENZAR JUEGO */
+.boton {
+  color: #fff;
+  margin-top: 1.5%;
+  font-weight: bold;
+  padding: 12px 20px;
+  font-size: 18px;
+  border-radius: 10px;
+  position: relative;
+  display: inline-block;
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.2);
+  background-color: #c34747;
+  box-shadow: 0 5px 5px #853232, 0 9px 0 #5e2525, 0px 9px 10px rgba(0, 0, 0, 0.4), inset 0px 2px 9px rgba(255, 255, 255, 0.2), inset 0 -2px 9px rgba(0, 0, 0, 0.2);
+}
+
+.boton:hover {
+  box-shadow: 0 5px 5px #853232, 0 9px 0 #5e2525, 0px 9px 10px rgba(0, 0, 0, 0.4), inset 0px 2px 15px rgba(255, 255, 255, 0.4), inset 0 -2px 9px rgba(0, 0, 0, 0.2);
+}
+
+.boton:active {
+  top: 7px;
+  box-shadow: 0 2px 0 #5e2525, 0px 4px 4px rgba(0, 0, 0, 0.4), inset 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
