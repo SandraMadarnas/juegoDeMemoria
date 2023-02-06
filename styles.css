@@ -38,7 +38,7 @@ body {
 }
 
 .memory-card:active {
-  /* transform: scale(0.97); */
+  transform: scale(0.97);
   transition: transform .2s;
   transform: rotateY(180deg);
 }
