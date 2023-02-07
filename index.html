@@ -5,124 +5,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Memoria en JavaScript</title>
     <!-- FAVICON -->
     <link rel="shortcut icon" href="/img/icon/favicon.smile2.png">
     <!-- CSS -->
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <script src="scripts.js"></script>
-    <title>Juego de Memoria</title>
+    <script src="scripts.js" defer></script>
+
 </head>
 
 <body>
     <div class="container">
-
         <!-- Cabecera -->
         <section class="m-2">
             <div class="header-game text-center">
                 <div class="col-12 col-sm-6">
-                    <button class="boton" id="#" onclick="generarTablero()">Empezar el juego</button>
+                    <button class="boton" id="start-btn">Empezar el juego</button>
                 </div>
-                <div class="col-12 col-sm-3">
+                <div class="col-6 col-sm-3">
                     <div class="score-board__item">
                         <p>Puntos</p>
                         <p class="score-board__item-score" id="#">0</p>
                     </div>
                 </div>
-                <div class="col-12 col-sm-3">
+                <div class="col-6 col-sm-3">
                     <div class="score-board__item">
                         <p>Tiempo</p>
-                        <p class="score-board__item-time" id="#">0</p>
+                        <p class="scoreTime" id="scoreTime"> </p>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- Body Juego -->
 
-        <section class="memory-game" id="tablero">
-           
+        <!-- Body del Juego -->
+        <section class="body-game" id="tablero">
+
         </section>
 
-
-<!-- 
-        <section class="memory-game" id="tablero">
-            <div class="memory-card" data-framework="perrito">
-                <img class="front-face" src="/img/perrito.png" alt="perrito">
-                <img class="back-face" src="/img/gatito.png" alt="Memory Card">
-            </div>
-
-            <div class="memory-card" data-framework="perrito">
-                <img class="front-face" src="/img/perrito.png" alt="perrito">
-                <img class="back-face" src="/img/gatito.png" alt="Memory Card">
-            </div>
-
-            <div class="memory-card" data-framework="conejo">
-                <img class="front-face" src="/img/conejo.png" alt="conejo">
-                <img class="back-face" src="/img/gatito.png" alt="Memory Card">
-            </div>
-
-            <div class="memory-card" data-framework="conejo">
-                <img class="front-face" src="/img/conejo.png" alt="conejo">
-                <img class="back-face" src="/img/gatito.png" alt="Memory Card">
-            </div>
-
-            <div class="memory-card" data-framework="patito">
-                <img class="front-face" src="/img/patito.png" alt="patito">
-                <img class="back-face" src="/img/gatito.png" alt="Memory Card">
-            </div>
-
-            <div class="memory-card" data-framework="patito">
-                <img class="front-face" src="/img/patito.png" alt="patito">
-                <img class="back-face" src="/img/gatito.png" alt="Memory Card">
-            </div>
-
-            <div class="memory-card" data-framework="mono">
-                <img class="front-face" src="/img/mono.png" alt="mono">
-                <img class="back-face" src="/img/gatito.png" alt="Memory Card">
-            </div>
-
-            <div class="memory-card" data-framework="mono">
-                <img class="front-face" src="/img/mono.png" alt="mono">
-                <img class="back-face" src="/img/gatito.png" alt="Memory Card">
-            </div>
-
-            <div class="memory-card" data-framework="tortuga">
-                <img class="front-face" src="/img/tortuga.png" alt="tortuga">
-                <img class="back-face" src="/img/gatito.png" alt="Memory Card">
-            </div>
-
-            <div class="memory-card" data-framework="tortuga">
-                <img class="front-face" src="/img/tortuga.png" alt="tortuga">
-                <img class="back-face" src="/img/gatito.png" alt="Memory Card">
-            </div>
-
-            <div class="memory-card" data-framework="castor">
-                <img class="front-face" src="/img/castor.png" alt="castor">
-                <img class="back-face" src="/img/gatito.png" alt="Memory Card">
-            </div>
-
-            <div class="memory-card" data-framework="castor">
-                <img class="front-face" src="/img/castor.png" alt="castor">
-                <img class="back-face" src="/img/gatito.png" alt="Memory Card">
-            </div>
-
-        </section> -->
-        <!-- Fin Body Juego -->
-
-        <!-- Has Terminado el Juego -->
-        <hr><hr>
-        <section>
-            <div class="container">
-                <div class="board"></div>
-                <div class="finish-display hide">
-                    <h2>🎉 ¡Has terminado el juego!</h2>
-                </div>
-            </div>
-        </section>
-        <!-- Fin Has Terminado el Juego -->
-
-    </div> <!-- Cierre container -->
+    </div>
 </body>
 
 </html>
