@@ -1,18 +1,28 @@
 // const timer = document.querySelector('#timer');
 // const cards = document.querySelectorAll('.card');
 
+const startBtn = document.querySelector("#start-btn")
 const score = document.querySelector('#score');
+let puntos = 0;
 let time = 0;
 let timerId;
+
 
 let imagenes = [];
 let selecciones = [];
 let scoreTime = 0;
-let timerWorking = true;
+let timerWorking = false;
 
-// const startBtn = document.querySelector('#startBtn');
-// startBtn.addEventListener('click', generarTablero);
-document.querySelector("#start-btn").onclick = generarTablero;
+
+startBtn.addEventListener("click", () => {
+    timerWorking = true;
+    generarTablero();
+    score.innerHTML = `<div id="score">
+    <p>PUNTOS</p>
+    <p class="score" id="score">${puntos}</p>
+    </div>
+    `;
+});
 
 
 // CARGAR IMÁGENES
@@ -61,6 +71,8 @@ function generarTablero() {
 
 // DAR VUELTA A LAS TARJETAS, SI HACEN MACTH SE QUEDAN DE CARA, SI NO SE DAN LA VUELTA
 function seleccionarTarjeta(i) {
+    let trasera1 = document.getElementById("trasera" + selecciones[0]);
+    let trasera2 = document.getElementById("trasera" + selecciones[1]);
     let tarjeta = document.getElementById("tarjeta" + i);
     if (tarjeta.style.transform != "rotateY(180deg)") {
         tarjeta.style.transform = "rotateY(180deg)";
@@ -69,6 +81,13 @@ function seleccionarTarjeta(i) {
     if (selecciones.length == 2) {
         deseleccionar(selecciones);
         selecciones = [];
+    }
+
+
+    if (trasera1 != trasera2) {
+        updatePuntos(1);
+    } else {
+        updatePuntos(-1);
     }
 }
 
@@ -88,6 +107,9 @@ function deseleccionar(selecciones) {
     }, 1000);
 }
 
+let trasera1 = document.getElementById("trasera" + selecciones[0]);
+let trasera2 = document.getElementById("trasera" + selecciones[1]);
+
 
 // TIEMPO
 function timer() {
@@ -105,29 +127,8 @@ function timerReset() {
 
 
 // PUNTOS
-function updateScore(match) {
-    // Estoy llamando a una variable que esta dentro de una funcion
-    if (trasera1.innerHTML != trasera2.innerHTML) {
-        score++;
-    } else {
-        score--;
-    }
-    document.getElementById("score").innerHTML = "Score: " + score;
-}
-
-// Example usage:
-// updateScore(true);  // increases the score by 1
-
-
-let cardsLeft = 8;
-
-function updateScore(match) {
-    if (match) {
-        cardsLeft--;
-        if (cardsLeft === 0) {
-            alert("¡Felicidades! Has completado el juego de memoria.");
-        }
-    }
+function updatePuntos(puntuacion) {
+    score.textContent = puntos += puntuacion;
 }
 
 
