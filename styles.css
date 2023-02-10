@@ -19,7 +19,7 @@ div {
 
 /* SECCIÓN DEL BOTON-PUNTOS-TIEMPO */
 .header-game {
-  width: 70%;
+  width: 50%;
   margin: auto;
   padding: 1%;
   display: flex;
@@ -45,6 +45,7 @@ div {
   cursor: pointer;
   width: 150px;
   height: 200px;
+  margin: 1%
 }
 
 .tarjeta {
