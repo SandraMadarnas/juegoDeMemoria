@@ -9,13 +9,17 @@ let imagenes = [];
 let selecciones = [];
 let scoreTime = 0;
 let timerWorking = false;
+let contadorAciertos = 0;
 
 
 startBtn.addEventListener("click", () => {
     timerWorking = true;
     generarTablero();
+    let puntos = 0;
     score.innerHTML = `${puntos}
     `;
+    document.querySelector("#win-message").style.display = "none";
+    contadorAciertos = 0;
 });
 
 
@@ -62,7 +66,6 @@ function generarTablero() {
     tarjetas.sort(() => Math.random() - 0.5);
     tablero.innerHTML = tarjetas.join(" ");
     timerReset();
-    // updatePuntos = 0;
 }
 
 
@@ -122,6 +125,14 @@ function timerReset() {
 // PUNTOS
 function updatePuntos(puntuacion) {
     score.textContent = puntos += puntuacion;
+
+    if (puntuacion == 1) {
+        contadorAciertos++;
+    }
+
+    if (contadorAciertos == 8) {
+        document.querySelector("#win-message").style.display = "block";
+    }
 }
 
 
@@ -129,6 +140,3 @@ function updatePuntos(puntuacion) {
 // MENSAJE DE JUEGO TERMINADO
 // let juegoFinalizado = window.confirm('🎉 ¡Has terminado el juego!');
 // let juegoFinalizado = todaslascartasenblack() ? window.confirm('🎉 ¡Has terminado el juego!'): "";
-if (trasera1.style.background = "black") {
-    let juegoFinalizado = window.confirm('🎉 ¡Has terminado el juego!');
-}
